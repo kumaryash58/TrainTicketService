@@ -1,10 +1,10 @@
 package com.trainticket.model;
 
 public class Receipt {
-	private String from = "London";
-	private String to = "France";
+	private String from;
+	private String to;
 	private User user;
-	private double pricePaid = 20;
+	private double pricePaid;
 	private String seatSection;
 
 	public String getFrom() {

@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.trainticket.dto.TicketRequest;
 import com.trainticket.model.Receipt;
 import com.trainticket.model.SeatAssignment;
-import com.trainticket.model.User;
 import com.trainticket.service.TicketService;
 
 import java.util.*;
@@ -19,8 +19,8 @@ public class TicketController {
 	private TicketService ticketService;
 
 	@PostMapping("/purchase")
-	public ResponseEntity<Receipt> purchaseTicket(@RequestBody User user) {
-		return ResponseEntity.ok(ticketService.purchaseTicket(user));
+	public ResponseEntity<Receipt> purchaseTicket(@RequestBody TicketRequest ticketRequest) {
+		return ResponseEntity.ok(ticketService.purchaseTicket(ticketRequest));
 	}
 
 	@GetMapping("/receipt/{email}")
